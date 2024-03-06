@@ -13,7 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AppAndroidJava"
-include(":app")
+rootProject.name = "VD1"
 include(":app")
  

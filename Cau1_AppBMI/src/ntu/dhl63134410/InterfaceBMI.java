@@ -32,8 +32,7 @@ public class InterfaceBMI extends JFrame {
 	private JLabel Display;
 	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
-
-
+	private final Action action_2 = new SwingAction_2();
 
 	public InterfaceBMI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -154,6 +153,30 @@ public class InterfaceBMI extends JFrame {
 			RESULT.setOpaque(true);
 			RESULT.setBackground(null);
 			Display.setText("");
+		}
+	}
+	private class SwingAction_2 extends AbstractAction {
+		public SwingAction_2() {
+			putValue(NAME, "Caculate");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			double h = Double.parseDouble(heightValue.getText());
+			double w = Double.parseDouble(weightValue.getText());
+			
+			double bmi= w / (h*h);
+			
+			String cal= String.format("%.2f", bmi);
+			
+			RESULT.setText(cal);
+			
+			if(bmi <= 18.5) {
+				RESULT.setOpaque(true);
+				RESULT.setBackground(Color.white);
+				Display.setForeground(Color.black);
+				Display.setText("Underweight");
+			}
+			
 		}
 	}
 

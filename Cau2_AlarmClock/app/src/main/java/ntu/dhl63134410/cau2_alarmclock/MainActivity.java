@@ -3,7 +3,10 @@ package ntu.dhl63134410.cau2_alarmclock;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.timepicker.MaterialTimePicker;
@@ -23,6 +26,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        createNotiChannel();
+
+
+    }
+
+    private void createNotiChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "akchannel";
+            String desc = "Channel for Alarm Manager";
+            int imp = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel= new NotificationChannel("danghoanglam", name, imp);
+            channel.setDescription(desc);
+
+            NotificationManager notificationManager= getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }

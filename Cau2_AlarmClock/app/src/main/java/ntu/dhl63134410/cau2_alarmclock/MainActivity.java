@@ -6,9 +6,12 @@ import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
@@ -63,6 +66,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.setAlarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                Intent intent= new Intent(MainActivity.this, AlarmReceiver.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                        MainActivity.this,
+                        0,
+                        intent,
+                        PendingIntent.FLAG_IMMUTABLE // hoặc PendingIntent.FLAG_MUTABLE
+                );
+
+                alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+                Toast.makeText(MainActivity.this,"Alarm Set", Toast.LENGTH_SHORT).show();
+
+            }
+        });
         
     }
 

@@ -182,6 +182,12 @@ public class InterfaceBMI extends JFrame {
 				Display.setForeground(Color.green);
 				Display.setText("Normal");
 			}
+			else if(bmi <= 29.9) {
+				RESULT.setOpaque(true);
+				RESULT.setBackground(Color.yellow);
+				Display.setForeground(Color.yellow);
+				Display.setText("Overweight");
+			}
 			
 		}
 	}

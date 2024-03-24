@@ -176,6 +176,12 @@ public class InterfaceBMI extends JFrame {
 				Display.setForeground(Color.black);
 				Display.setText("Underweight");
 			}
+			else if(bmi <= 24.9) {
+				RESULT.setOpaque(true);
+				RESULT.setBackground(Color.green);
+				Display.setForeground(Color.green);
+				Display.setText("Normal");
+			}
 			
 		}
 	}

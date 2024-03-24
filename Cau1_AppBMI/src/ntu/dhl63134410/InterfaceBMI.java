@@ -30,6 +30,8 @@ public class InterfaceBMI extends JFrame {
 	private JTextField weightValue;
 	private JTextField RESULT;
 	private JLabel Display;
+	private final Action action = new SwingAction();
+	private final Action action_1 = new SwingAction_1();
 
 
 
@@ -129,6 +131,30 @@ public class InterfaceBMI extends JFrame {
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_5.setBounds(-6, 672, 530, 38);
 		contentPane.add(lblNewLabel_5);
+	}
+	
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "Exit");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			System.exit(0);
+		}
+	}
+	private class SwingAction_1 extends AbstractAction {
+		public SwingAction_1() {
+			putValue(NAME, "Clear");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			heightValue.setText("");
+			weightValue.setText("");
+			RESULT.setText("");
+			RESULT.setOpaque(true);
+			RESULT.setBackground(null);
+			Display.setText("");
+		}
 	}
 
 }

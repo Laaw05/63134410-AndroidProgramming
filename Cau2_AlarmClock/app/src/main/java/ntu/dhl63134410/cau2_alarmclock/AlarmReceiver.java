@@ -1,12 +1,17 @@
 package ntu.dhl63134410.cau2_alarmclock;
 
+import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 public class AlarmReceiver extends BroadcastReceiver {
 
+    @SuppressLint("MissingPermission")
     @Override
     public void onReceive(Context context, Intent intent) {
         Intent nextActivity= new Intent(context, NotificationActivity.class);
@@ -17,5 +22,20 @@ public class AlarmReceiver extends BroadcastReceiver {
                 nextActivity,
                 PendingIntent.FLAG_IMMUTABLE // hoặc PendingIntent.FLAG_MUTABLE
         );
+
+        NotificationCompat.Builder builder= new NotificationCompat.Builder(context, "danghoanglam")
+                .setSmallIcon(R.drawable.baseline_notifications_active_24)
+                .setContentTitle("Reminder")
+                .setContentText("It's time to wake up")
+                .setAutoCancel(true)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setContentIntent(pendingIntent);
+
+        NotificationManagerCompat notificationManagerCompat= NotificationManagerCompat.from(context);
+        notificationManagerCompat.notify(123, builder.build());
+
+
+
     }
 }

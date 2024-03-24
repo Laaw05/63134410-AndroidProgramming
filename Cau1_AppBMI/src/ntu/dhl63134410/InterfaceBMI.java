@@ -120,7 +120,8 @@ public class InterfaceBMI extends JFrame {
 		
 		JLabel lblNewLabel_4 = new JLabel();
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setIcon(new ImageIcon("L:\\MyProjects\\Java-Programming\\63134410-JavaProgramming\\Cau1_BMIApplication\\img\\bmi.jpg"));
+		Image img = new ImageIcon(this.getClass().getResource("/bmi.jpg")).getImage();
+		lblNewLabel_4.setIcon(new ImageIcon(img));
 		contentPane.add(lblNewLabel_4);
 		lblNewLabel_4.setBounds(16, 472, 508, 207);
 		

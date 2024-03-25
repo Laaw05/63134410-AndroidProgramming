@@ -125,7 +125,7 @@ public class InterfaceBMI extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		lblNewLabel_4.setBounds(16, 472, 508, 207);
 		
-		JLabel lblNewLabel_5 = new JLabel("Thank you for using my app");
+		JLabel lblNewLabel_5 = new JLabel("Dang Hoang Lam- 63134410");
 		lblNewLabel_5.setBackground(new Color(102, 204, 51));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 15));

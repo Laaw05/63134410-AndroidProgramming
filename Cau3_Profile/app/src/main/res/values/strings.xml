@@ -5,14 +5,14 @@
 	<string name="app_name">Page 1</string>
 	<string name="ek_img_content">ExportKit Image</string>
 	<string name="name_ek2_string">Name</string>
-	<string name="__ng_ho_ng_l_m_string">ng Hong Lm</string>
+	<string name="nameString">Dang Hoang Lam</string>
 	<string name="username_ek2_string">Username</string>
-	<string name="__hoanglam_string">@hoanglam</string>
-	<string name="email_ek2_string">Email</string>
+	<string name="usernameString">@hoanglam</string>
+	<string name="emailString">Email</string>
 	<string name="lam_dh_63cntt_ntu_edu_vn_string">lam.dh.63cntt@ntu.edu.vn</string>
 	<string name="links_ek2_string">Links</string>
 	<string name="facebook_string"><u>Facebook</u></string>
 	<string name="hoang_lam_dang___youtube_string"><u>Hoang Lam Dang - YouTube</u></string>
 	<string name="bio_ek2_string">Bio</string>
-	<string name="sinh_vi_n_ng_nh_c_ng_ngh__th_ng_tin_n_m_3_hi_n__ang_theo_h_c_t_i_tr__ng___i_h_c_nha_trang__mssv__63134410_string">Sinh vin ngnh cng ngh thng tin nm 3 hin ang theo hc ti trng i hc Nha Trang. MSSV: 63134410</string>
+	<string name="bioString">Sinh viên ngành công nghệ thông tin hiện đang theo học tại trường Đại học Nha Trang. MSSV: 63134410</string>
 </resources>

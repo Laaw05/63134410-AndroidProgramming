@@ -152,7 +152,7 @@ public class InterfaceBMI extends JFrame {
 			weightValue.setText("");
 			RESULT.setText("");
 			RESULT.setOpaque(true);
-			RESULT.setBackground(null);
+			RESULT.setBackground(Color.white);
 			Display.setText("");
 		}
 	}
